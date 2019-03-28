@@ -169,19 +169,19 @@ def run_test_make_less_simple_string():
 
     # Test 1:
     expected = '5-6-7-8-9-10-11-12-13'
-    actual = make_simple_string(5, 13)
+    actual = make_less_simple_string(5, 13)
     print('Expected:', expected)
     print('Actual:  ', actual)
 
     # Test 2 (add your test here):
     expected = '7-8-9-10-11'
-    actual = make_simple_string(7, 11)
+    actual = make_less_simple_string(7, 11)
     print('Expected:', expected)
     print('Actual:  ', actual)
 
     # Test 3:
     expected = '205'
-    actual = make_simple_string(205, 205)
+    actual = make_less_simple_string(205, 205)
     print('Expected:', expected)
     print('Actual:  ', actual)
 
@@ -209,9 +209,17 @@ def make_less_simple_string(m, n):
       :type n: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
+
+    sequence = ''
+    for k in range(m, n + 1):
+        if k == n:
+            sequence = sequence + str(k)
+        else:
+            sequence = sequence + str(k) + '-'
+    return sequence
 
 
 def run_test_draw_shapes():
