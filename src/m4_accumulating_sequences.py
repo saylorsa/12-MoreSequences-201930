@@ -416,7 +416,7 @@ def rectangles_from_circles(circles):
       :rtype: list of rg.Rectangles
     """
     # -------------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ###########################################################################
@@ -427,6 +427,14 @@ def rectangles_from_circles(circles):
     #            in this function, so DON'T draw anything in here!
     ###########################################################################
     # -------------------------------------------------------------------------
+
+    rect_list = []
+    for k in range(len(circles)):
+        center = circles[k].center
+        radius = circles[k].radius
+        rect = rg.Rectangle(rg.Point(center.x - radius, center.y - radius), rg.Point(center.x + radius, center.y + radius))
+        rect_list = rect_list + [rect]
+    return rect_list
 
 
 # -----------------------------------------------------------------------------
