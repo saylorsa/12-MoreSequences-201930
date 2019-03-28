@@ -77,7 +77,7 @@ def sum_radii(circles):
       :rtype: int | float
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -88,6 +88,11 @@ def sum_radii(circles):
     #
     #       Instead, use explicit loops, as you have for other problems.
     # -------------------------------------------------------------------------
+    total = 0
+    for k in range(len(circles)):
+        radius = circles[k].radius
+        total = total + radius
+    return total
 
 
 ###############################################################################
