@@ -30,7 +30,7 @@ def main():
 def run_test_make_simple_list():
     """ Tests the   make_simple_list    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  make_simple_list  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -48,6 +48,17 @@ def run_test_make_simple_list():
     print('Actual:  ', actual)
 
     # Test 2 (add your test here):
+    expected = [7, 8, 9, 10, 11]
+    actual = make_simple_list(7, 11)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 3:
+    expected = [99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111,
+                112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
+    actual = make_simple_list(99, 121)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_simple_list(m, n):
