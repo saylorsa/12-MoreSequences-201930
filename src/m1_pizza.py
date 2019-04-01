@@ -32,7 +32,7 @@ def main():
 
     run_test_generate_points_on_circle()
     run_test_draw_points_on_circle()
-    # run_test_pizza()
+    run_test_pizza()
     # run_test_polygon()
     # run_test_fancy_polygon()
 
@@ -337,7 +337,7 @@ def pizza(window, circle, number_of_slices, color, thickness):
       :type thickness:        int
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -345,6 +345,14 @@ def pizza(window, circle, number_of_slices, color, thickness):
     #    (defined above) to generate the relevant points,
     #    and then draw lines that are based in part on those points.
     # -------------------------------------------------------------------------
+    circle.attach_to(window)
+    points = generate_points_on_circle(circle,number_of_slices)
+    for k in range(len(points)):
+        line = rg.Line(points[k],circle.center)
+        line.thickness = thickness
+        line.color = color
+        line.attach_to(window)
+    window.render()
 
 
 def run_test_polygon():
