@@ -358,7 +358,7 @@ def pizza(window, circle, number_of_slices, color, thickness):
 def run_test_polygon():
     """ Tests the   polygon   function. """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement this TEST function.
+    # DONE: 7. Implement this TEST function.
     #   It TESTS the   polygon   function defined below.
     #   Include at least ** 1 ** ADDITIONAL test (that YOU write).
     #
@@ -390,6 +390,15 @@ def run_test_polygon():
     # -------------------------------------------------------------------------
     # Test 3:  (YOU write THIS test)
     # -------------------------------------------------------------------------
+
+    title = ('POLYGON test 3:  17 segments with thin purple lines.')
+    window = rg.RoseWindow(550, 400, title)
+
+    circle = rg.Circle(rg.Point(350, 200), 150)
+    circle.outline_thickness = 3
+    polygon(window, circle, 17, 'purple', 3)
+
+    window.close_on_mouse_click()
 
 
 def polygon(window, circle, number_of_segments, color, thickness):
