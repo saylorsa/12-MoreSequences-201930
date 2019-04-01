@@ -34,7 +34,7 @@ def main():
     run_test_draw_points_on_circle()
     run_test_pizza()
     run_test_polygon()
-    # run_test_fancy_polygon()
+    run_test_fancy_polygon()
 
 
 def run_test_generate_points_on_circle():
@@ -503,13 +503,13 @@ def run_test_fancy_polygon():
     #   a contrasting color for the lines makes them especially pretty.
     # -------------------------------------------------------------------------
 
-    title = ('FANCY POLYGON test 4:  400 lime green lines on blue circle,'
+    title = ('FANCY POLYGON test 4:  40 lime green lines on blue circle,'
              + ' hops = 33.')
-    window = rg.RoseWindow(480, 350, title)
+    window = rg.RoseWindow(480, 500, title)
 
-    circle = rg.Circle(rg.Point(240, 165), 200)
+    circle = rg.Circle(rg.Point(240, 250), 200)
     circle.fill_color = 'blue'
-    fancy_polygon(window, circle, 400, 33, 'lime green', 5)
+    fancy_polygon(window, circle, 40, 33, 'lime green', 3)
     window.close_on_mouse_click()
 
 def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
@@ -571,7 +571,7 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
       :type thickness:       int
     """
     # -------------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -585,6 +585,16 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
     ###########################################################################
     # -------------------------------------------------------------------------
 
+    circle.attach_to(window)
+    points = generate_points_on_circle(circle,number_of_lines)
+    length = len(points)
+    for k in range(len(points)):
+        line = rg.Line(points[k],points[(k+hops_to_next_point) % length])
+        line.color = color
+        line.thickness = thickness
+        line.attach_to(window)
+
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
